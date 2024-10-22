@@ -9,16 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5c044cce7c8321458d34038ee4ef67f, type: 3}
-  m_Name: MainChar
+  m_Script: {fileID: 11500000, guid: e65be0e9f683f8c499c6d7a801c6a01a, type: 3}
+  m_Name: Score
   m_EditorClassIdentifier: 
-  inputs: {x: 0, y: 0, z: 0}
-  hAxis: Horizontal
-  vAxis: Vertical
-  speed: 10
-  gravity: 3
-  jumpForce: 500
-  jumpCount: 2
-  jumpCountMax: 2
-  rotateDirection: {x: 0, y: 0, z: 0}
-  rotateSpeed: 10
+  value: 140

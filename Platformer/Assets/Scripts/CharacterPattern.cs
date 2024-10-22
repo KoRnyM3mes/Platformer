@@ -7,6 +7,7 @@ public abstract class CharacterPattern : ScriptableObject
     public string hAxis = "Horizontal", vAxis = "Vertical";
     public float speed = 10f, gravity = 3f, jumpForce = 30f;
     public int jumpCount = 0, jumpCountMax = 2;
+    private Rigidbody rb;
 
     public float Speed
     {

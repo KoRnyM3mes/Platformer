@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RotateBehavior : MonoBehaviour
-{
+{ 
     // Rotation speed can be adjusted from the Unity Editor
     public float rotationSpeed = 30f; // degrees per second
 
