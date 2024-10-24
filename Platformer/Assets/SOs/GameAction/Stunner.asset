@@ -9,16 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5c044cce7c8321458d34038ee4ef67f, type: 3}
-  m_Name: MainChar
+  m_Script: {fileID: 11500000, guid: faa72667690ab3944bfe010dda4fcac9, type: 3}
+  m_Name: Stunner
   m_EditorClassIdentifier: 
-  inputs: {x: 0, y: 0, z: 0}
-  hAxis: Horizontal
-  vAxis: Vertical
-  speed: 10
-  gravity: 11
-  jumpForce: 2000
-  jumpCount: 0
-  jumpCountMax: 2
-  rotateDirection: {x: 0, y: 0, z: 0}
-  rotateSpeed: 2
