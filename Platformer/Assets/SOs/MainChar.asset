@@ -16,9 +16,9 @@ MonoBehaviour:
   hAxis: Horizontal
   vAxis: Vertical
   speed: 10
-  gravity: 11
-  jumpForce: 2000
-  jumpCount: 0
+  gravity: 10
+  jumpForce: 10
+  jumpCount: 2
   jumpCountMax: 2
-  rotateDirection: {x: 0, y: 0, z: 0}
+  rotateDirection: {x: 0, y: 2, z: 0}
   rotateSpeed: 2
