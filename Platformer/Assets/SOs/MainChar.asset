@@ -15,10 +15,10 @@ MonoBehaviour:
   inputs: {x: 0, y: 0, z: 0}
   hAxis: Horizontal
   vAxis: Vertical
-  speed: 10
+  speed: 0
   gravity: 10
   jumpForce: 10
-  jumpCount: 2
+  jumpCount: 0
   jumpCountMax: 2
-  rotateDirection: {x: 0, y: 2, z: 0}
+  rotateDirection: {x: 0, y: 0, z: 0}
   rotateSpeed: 2

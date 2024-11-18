@@ -7,13 +7,13 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        // Get the CharacterController component attached to the player
+        // Get references to components
         characterController = GetComponent<CharacterController>();
     }
 
     private void Update()
     {
-        // Call the Move method from the ScriptableObject (CharacterMoveAndRotate3d)
+        // Move the character using the CharacterPattern system
         if (characterPattern != null)
         {
             characterPattern.Move(characterController);
