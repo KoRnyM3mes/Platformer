@@ -12,12 +12,18 @@ public class ThirdPersonMovement : MonoBehaviour
     public int jumpCount = 0;       // Tracks the number of jumps performed
     public int jumpCountMax = 2;    // Maximum number of jumps (double jump)
     public float gravity = 9.81f;   // Use a more realistic gravity value
-
     public float turnSmoothTime = 0.1f;
+
+    public Transform cam;
 
     public UnityEvent walkEvent, jumpEvent;
 
     private float turnSmoothVelocity;
+
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
     // Update is called once per frame
     void Update()
@@ -31,14 +37,18 @@ public class ThirdPersonMovement : MonoBehaviour
         if (direction.magnitude >= 0.1f)
         {
             // Rotate the character smoothly toward the movement direction
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
 
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             // Move the character in the desired direction
-            controller.Move(direction * speed * Time.deltaTime);
-            walkEvent.Invoke();
+            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            controller.Move( moveDir .normalized* speed * Time.deltaTime);
+            if (controller.isGrounded)
+            {
+                walkEvent.Invoke();
+            }
         }
 
         // Handle jumping and gravity
@@ -76,7 +86,7 @@ public class ThirdPersonMovement : MonoBehaviour
                 jumpCount++;  // Increment jump count for double jump
             }
         }
-
+        
         // Apply the vertical velocity (y) to the movement direction
         controller.Move(new Vector3(0f, yVelocity, 0f) * Time.deltaTime);
     }
